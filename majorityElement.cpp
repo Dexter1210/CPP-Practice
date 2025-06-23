@@ -32,8 +32,19 @@ int main() {
             cout << "the majority element is: " << ans << endl;
             break;
         }
-    } {
-
+    } 
+    // optimised approach using O(n) Moore's voting algorithm
+    int frequency = 0, answer = 0;
+    for(int i =0; i< vec.size(); i++) {
+        if(frequency == 0) {
+            answer = vec[i];
+        }
+        if(vec[i] == ans) {
+            frequency++;
+        } else {
+            frequency--;
+        }
     }
+    cout << "the majority element is: " << answer << endl;
     return 0;
 }
